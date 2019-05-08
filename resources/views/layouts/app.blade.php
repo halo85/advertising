@@ -46,11 +46,11 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Prisijungimas') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registracija') }}</a>
                             </li>
                         @endif
                     @else
@@ -92,10 +92,10 @@
                     <div class="col-md-4">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <a href="">Posts</a>
+                                {{--                                <a href="">Posts</a>--}}
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('categories.index') }}">Categories</a>
+                                <a href="{{ route('categories.index') }}">Kategorijos</a>
                             </li>
                         </ul>
                     </div>

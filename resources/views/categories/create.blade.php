@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">Sukurti kategoriją</div>
+        <div class="card-header">
+            {{ isset($category) ? 'Redaguoti kategoriją' : 'Sukurti kategoriją' }}
+        </div>
         <div class="card-body">
             @if($errors->any())
                 <div class="alert alert-danger">
@@ -15,14 +17,22 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('categories.store') }}" method="post">
+            <form
+                action="{{ isset($category) ? route('categories.update', $category->id) : route('categories.store') }}"
+                method="post">
                 @csrf
+                @if(isset($category))
+                    @method('put')
+                @endif
                 <div class="form-group">
                     <label for="name">Pavadinimas</label>
-                    <input type="text" id="name" class="form-control" name="name">
+                    <input type="text" id="name" class="form-control" name="name"
+                           value="{{ isset($category) ? $category->name : '' }}">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success">Pridėti kategoriją</button>
+                    <button class="btn btn-success">
+                        {{ isset($category) ? 'Atnaujinti kategoriją' : 'Pridėti kategoriją' }}
+                    </button>
                 </div>
             </form>
         </div>

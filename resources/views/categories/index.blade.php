@@ -40,7 +40,7 @@
                         </td>
                         <td>
                             <a href="{{ route('categories.edit', $category->id) }}"
-                               class="btn btn-outline-success btn-sm">Edit</a>
+                               class="btn btn-outline-success btn-sm">Redaguoti</a>
                         </td>
                     </tr>
                 @endforeach
@@ -48,12 +48,4 @@
             </table>
         </div>
     </div>
-
-
-
-
-
-
-
-
 @endsection
